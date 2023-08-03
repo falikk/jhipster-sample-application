@@ -1,0 +1,94 @@
+
+application {
+  config {
+    baseName myApp,
+    applicationType monolith,
+    packageName com.myapp,
+    authenticationType jwt,
+    prodDatabaseType mysql,
+  }
+  entities *
+}
+
+entity MetaWorkflow {
+	id String required,
+    name String required,
+    definition String required,
+    createdBy String required,
+    createdTs Instant required,
+    updatedBy String,
+    updatedTs Instant
+}
+
+enum MetaWorkflowTaskType {
+	DWH, DMA
+}
+
+entity MetaWorkflowTask {
+	id String required,
+    name String required,
+    type MetaWorkflowTaskType required, 
+    definition String required,
+    createdBy String required,
+    createdTs Instant required,
+    updatedBy String,
+    updatedTs Instant
+}
+
+entity MetaDwhMapping {
+	id String required,
+    name String required,
+    entityId String required, 
+    definition String required,
+    createdBy String required,
+    createdTs Instant required,
+    updatedBy String,
+    updatedTs Instant
+}
+
+entity MetaDimMapping {
+	id String required,
+    name String required,
+    entityId String required, 
+    definition String required,
+    createdBy String required,
+    createdTs Instant required,
+    updatedBy String,
+    updatedTs Instant
+}
+
+entity MetaStarMapping {
+	id String required,
+    name String required,
+    entityId String required, 
+    definition String required,
+    createdBy String required,
+    createdTs Instant required,
+    updatedBy String,
+    updatedTs Instant
+}
+
+entity MetaEntity {
+	id String required,
+    name String required,
+    description String required, 
+    definition String required,
+    createdBy String required,
+    createdTs Instant required,
+    updatedBy String,
+    updatedTs Instant
+}
+
+entity MetaCustomEtl {
+	id String required,
+    name String required,
+    sqlStatement String required,
+    createdBy String required,
+    createdTs Instant required,
+    updatedBy String,
+    updatedTs Instant
+}
+
+readOnly *
+service * with serviceClass
+skipClient * 
