@@ -1,0 +1,52 @@
+{
+  "applications": ["myApp"],
+  "changelogDate": "20230803150552",
+  "entityTableName": "meta_workflow_task",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "MetaWorkflowTaskType",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "DWH,DMA"
+    },
+    {
+      "fieldName": "definition",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "createdTs",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "updatedTs",
+      "fieldType": "Instant"
+    }
+  ],
+  "name": "MetaWorkflowTask",
+  "readOnly": true,
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceClass",
+  "skipClient": true
+}
